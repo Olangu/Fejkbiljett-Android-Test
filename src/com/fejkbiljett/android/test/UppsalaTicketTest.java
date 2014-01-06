@@ -18,7 +18,10 @@ public class UppsalaTicketTest extends TestCase {
 	HashMap<String,Ticket> hmTicket = new HashMap<String,Ticket>();
 	HashMap<String,Bundle> hmData = new HashMap<String,Bundle>();
 	
-	String[] okTickets = { "full", "reduced" };
+	String[] okTickets = { "full-0", "reduced-0",
+						   "full-1", "reduced-1",
+						   "full-2", "reduced-2",
+						   "full-3", "reduced-3" };
 
 	public UppsalaTicketTest() {
 		super();

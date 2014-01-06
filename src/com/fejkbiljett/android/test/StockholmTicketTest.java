@@ -127,7 +127,8 @@ public class StockholmTicketTest extends TestCase {
 										data.getBoolean("zone_c")) ||
 										data.getBoolean("zone_l") ? 120 : 75 ));
 			String validTime = new SimpleDateFormat("HH:mm").format(cal.getTime());
-			
+			String validDate = new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime());
+
 			String [] message = hmTicket.get(ticket).getMessage().split("\n");
 			
 			long code = Long.parseLong(message[9]);
@@ -156,9 +157,7 @@ public class StockholmTicketTest extends TestCase {
 			
 			assertEquals(code, Long.parseLong(Utils.aeoxToHex(codeStr),16));
 			
-			expectedString = "SL biljett giltig till " + validTime + " " + 
-							 new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime());
-			
+			expectedString = "SL biljett giltig till " + validTime + " " + validDate;
 			assertEquals(expectedString, message[7]);
 			
 			int price;

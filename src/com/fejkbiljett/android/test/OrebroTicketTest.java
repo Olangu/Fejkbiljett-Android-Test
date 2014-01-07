@@ -64,7 +64,7 @@ public class OrebroTicketTest extends TestCase {
 	 * Test method for {@link com.fejkbiljett.android.tickets.StockholmTicket#getMessage()}.
 	 */
 	public void testGetMessage() {
-		int [] prices = { 12, 25 };
+		int [] prices = { 10, 21 };
 		String expectedString;
 		for(int i=0;i<okTickets.length;i++)
 		{

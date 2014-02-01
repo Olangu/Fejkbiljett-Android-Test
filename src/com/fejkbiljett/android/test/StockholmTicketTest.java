@@ -131,7 +131,7 @@ public class StockholmTicketTest extends TestCase {
 
 			String [] message = hmTicket.get(ticket).getMessage().split("\n");
 			
-			long code = Long.parseLong(message[9]);
+			long code = Long.parseLong(message[9].replaceAll(" ", ""));
 			
 			String zoneString = data.getBoolean("zone_a")?"A":"";
 			zoneString += data.getBoolean("zone_b")?"B":"";
@@ -157,7 +157,7 @@ public class StockholmTicketTest extends TestCase {
 			
 			assertEquals(code, Long.parseLong(Utils.aeoxToHex(codeStr),16));
 			
-			expectedString = "SL biljett giltig till " + validTime + " " + validDate;
+			expectedString = "SL biljett giltig till " + validTime + ", " + validDate;
 			assertEquals(expectedString, message[7]);
 			
 			int price;
